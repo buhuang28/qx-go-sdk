@@ -57,7 +57,7 @@ func Qx_EventGroupReq(botId *C.char, str *C.char) C.int {
 }
 
 //export Qx_EventPluginIns
-func Qx_EventPluginIns(ptr *C.int) C.int {
+func Qx_EventPluginIns(ptr C.int) C.int {
 	return cInt(EventPluginIns(goInt(ptr)))
 }
 
