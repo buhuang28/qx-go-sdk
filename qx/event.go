@@ -1,7 +1,6 @@
 package qx
 
 import "C"
-import log "github.com/sirupsen/logrus"
 
 var Info func() string
 var EventEnable func() int64
@@ -46,8 +45,6 @@ func Qx_EventFriendReq(botId *C.char, str *C.char) C.int {
 
 //export Qx_EventGroupMsg
 func Qx_EventGroupMsg(botId *C.char, str *C.char) C.int {
-	s := goString(str)
-	log.Info("收到群消息:", s)
 	return cInt(EventGroupMsg(goString(botId), goString(str)))
 }
 
